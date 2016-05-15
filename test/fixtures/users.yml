@@ -1,0 +1,42 @@
+micky:
+   name: Micky mouse
+   nickname: mouse
+   email: sandy@gmail.com
+   password_digest: <%= User.digest("password")%>
+   admin: true
+   activated: true
+   activated_at: <%= Time.zone.now %>
+
+james:
+   name: James dog
+   nickname: dog
+   email: wandy@gmail.com
+   password_digest: <%= User.digest("password")%>
+   activated: true
+   activated_at: <%= Time.zone.now %>
+
+dicky:
+   name: Dicky duck
+   nickname: ducky
+   email: randy@gmail.com
+   password_digest: <%= User.digest("password")%>
+   activated: true
+   activated_at: <%= Time.zone.now %>
+
+bames:
+   name: Bames fog
+   nickname: fog
+   email: landy@gmail.com
+   password_digest: <%= User.digest("password")%>
+   activated: true
+   activated_at: <%= Time.zone.now %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User#{n}" %>
+  nickname: <%= "Nick#{n}" %>
+  email: <%= "user-#{n}@moogle.com" %>
+  password_digest: <%= User.digest("password")%>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  <%end%>

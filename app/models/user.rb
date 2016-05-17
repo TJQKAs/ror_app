@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+    # each user has many posts dependent::destroy -> microposts will disappear in case user will have been destroyed
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token
   #we want that all emails will be converted to lowercase view before we
   #save it in data base

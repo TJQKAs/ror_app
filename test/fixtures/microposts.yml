@@ -24,3 +24,23 @@ micropost_<%= n %>:
   created_at: <%= 42.days.ago %>
   user: micky
   <%end%>
+
+ants:
+  content: "La la it was very difficult to retype all message!"
+  created_at: <%= 2.years.ago %>
+  user: james
+
+zoolander:
+    content: "This is a trash don't pay attention to it"
+    created_at: <%= 3.days.ago %>
+    user: james
+
+turtle:
+  content: "La la lal la sos !!!!"
+  created_at: <%= 10.minutes.ago %>
+  user: dicky
+
+dracula:
+    content: "This is a really trash"
+    created_at: <%= 4.hours.ago %>
+    user: dicky

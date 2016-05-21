@@ -1,6 +1,18 @@
 class User < ActiveRecord::Base
     # each user has many posts dependent::destroy -> microposts will disappear in case user will have been destroyed
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: "Relationship",
+                                                      foreign_key: "follower_id",
+                                                      dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+
+  has_many :passive_relationships, class_name: "Relationship",
+                                                      foreign_key: "followed_id",
+                                                      dependent: :destroy
+  has_many :followers, through: :passive_relationships, source: :follower
+
+
+
   attr_accessor :remember_token, :activation_token, :reset_token
   #we want that all emails will be converted to lowercase view before we
   #save it in data base
@@ -79,6 +91,23 @@ end
 def feed
   Micropost.where("user_id = ?", id )
 end
+
+# to user's following
+def  follow(other_user)
+  active_relationships.create(followed_id: other_user.id)
+end
+
+# to user's unfollowing
+def  unfollow(other_user)
+  active_relationships.find_by(followed_id: other_user.id).destroy
+end
+
+# returns true in case user follows
+def following?(other_user)
+  self.following.include?(other_user)
+  # !active_relationships.find_by(followed_id: other_user.id).nil?
+end
+
 
   private
 

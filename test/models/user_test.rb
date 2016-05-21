@@ -84,4 +84,15 @@ test "associated microposts should be destroyed" do
   end
   end
 
+  test "should follow and unfollow user" do
+    micky = users(:micky)
+    james = users(:james)
+    assert_not micky.following?(james)
+    micky.follow(james)
+    assert micky.following?(james)
+    assert james.followers.include?(micky)
+    micky.unfollow(james)
+    assert_not micky.following?(james)
+  end
+
 end

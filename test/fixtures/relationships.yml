@@ -1,0 +1,15 @@
+one:
+  follower: micky
+  followed: bames
+
+two:
+  follower: micky
+  followed: dicky
+
+three:
+  follower: james
+  followed: micky
+
+four:
+  follower: bames
+  followed: micky

@@ -108,7 +108,6 @@ def following?(other_user)
   # !active_relationships.find_by(followed_id: other_user.id).nil?
 end
 
-
   private
 
   # convert to lowercase

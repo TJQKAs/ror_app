@@ -31,9 +31,9 @@ ants:
   user: james
 
 zoolander:
-    content: "This is a trash don't pay attention to it"
-    created_at: <%= 3.days.ago %>
-    user: james
+  content: "This is a trash don't pay attention to it"
+  created_at: <%= 3.days.ago %>
+  user: james
 
 turtle:
   content: "La la lal la sos !!!!"
@@ -41,6 +41,16 @@ turtle:
   user: dicky
 
 dracula:
-    content: "This is a really trash"
-    created_at: <%= 4.hours.ago %>
-    user: dicky
+  content: "This is a really trash"
+  created_at: <%= 4.hours.ago %>
+  user: dicky
+
+gracula:
+  content: "This is a really trash I don't joke"
+  created_at: <%= 7.hours.ago %>
+  user: bames
+
+zoo:
+  content: "This is a trash don't pay attention to it, I repeat"
+  created_at: <%= 3.days.ago %>
+  user: james

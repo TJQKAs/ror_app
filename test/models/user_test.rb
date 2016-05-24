@@ -95,4 +95,22 @@ test "associated microposts should be destroyed" do
     assert_not micky.following?(james)
   end
 
+  test "feed should have the right posts" do
+    micky = users(:micky)
+    dicky = users(:dicky)
+    bames = users(:bames)
+    james = users(:james)
+    #followed user
+    bames.microposts.each do |post_following|
+      assert micky.feed.include?(post_following)
+    end
+    #post from self
+    micky.microposts.each do |post_self|
+    assert micky.feed.include?(post_self)
+   end
+   #Posts from unfollowed users
+#      james.microposts.each do |post|
+#      assert_not micky.include?(post)
+# end
+end
 end
